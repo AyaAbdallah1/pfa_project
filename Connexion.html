@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Document</title>
+  </head>
+  <body>
+
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js"></script>
+    
+
+    <script>
+      // TODO: Replace the following with your app's Firebase project configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAjGSHIYvSp676eDEcsAFU8ZDwMu1Wn2M4",
+        authDomain: "pfaproject-41266.firebaseapp.com",
+        databaseURL: "https://pfaproject-41266-default-rtdb.firebaseio.com",
+        projectId: "pfaproject-41266",
+        storageBucket: "pfaproject-41266.appspot.com",
+        messagingSenderId: "1040396723062",
+        appId: "1:1040396723062:web:58597821bc10792e0f1057",
+        measurementId: "G-J9G2WFP284"
+      };
+      
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.getDatabase(app);
+    
+      const firebaseRef = database.ref("DataUser");
+      firebaseRef.once("value" , function(snapshot){
+        const data = snapshot.val();
+        for(let i in data){
+          console.log(data[i])
+        }
+      })
+    </script>
+  </body>
+</html>
